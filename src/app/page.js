@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/server";
+import { redirect } from "next/navigation";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -11,7 +12,17 @@ export default async function ProtectedPage() {
   return (
     <>
       <main>
-        <p>this is a paragraph</p>
+        <p>
+          this is a paragraph that is only visible to authenticated users.
+          <br />
+          You can add more content here, such as user-specific information or
+          features that require authentication.
+          <br />
+          <br />
+          You can also use this space to display user data, such as their name,
+          email, or any other relevant information that you want to show to
+          authenticated users.
+        </p>
       </main>
     </>
   );
