@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+An advanced, real-time **IoT Relay Management System**, built using **Next.js, Supabase, MQTT, and ShadCN UI**, inheriting core concepts from a previous **Django-based project**.  
 
-## Getting Started
+## 📌 Features  
+✅ **User Authentication & Management** (Supabase Auth)  
+✅ **Multiple Shops Ownership** (Each user can own multiple shops)  
+✅ **IoT Relay Device Control** (Relay devices & relay channels linked to users)  
+✅ **Customizable Relay Channels** (Users can rename channels via `display_name`)  
+✅ **Real-time MQTT Integration** (Live updates for relay status)  
+✅ **Admin Panel for Device Management**  
 
-First, run the development server:
+## 📚 Inherited from Django Project  
+This system **evolves from a Django-based IoT project**, where:  
+🔹 **Relay Devices & Channels** were first managed using Django models.  
+🔹 **User authentication** was handled via Django’s built-in `auth.User`.  
+🔹 **Admin users** could add relay devices and auto-generate channels via Django Views.  
+Now, we've transitioned to **Next.js + Supabase**, making everything more scalable and dynamic! 🚀  
 
+## 🛠️ Tech Stack  
+- **Frontend:** Next.js (React) + TailwindCSS  
+- **Backend:** Supabase (PostgreSQL)  
+- **Realtime:** MQTT for live relay control  
+- **UI:** ShadCN components for sleek interfaces  
+
+## 🔧 Setup Instructions  
+### 1️⃣ Install Dependencies  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Configure Environment Variables  
+Create a `.env.local` file in the root directory and add the required environment variables. For example:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+MQTT_BROKER_URL=your-mqtt-broker-url
+```
+> Replace the values with your actual credentials.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3️⃣ Run the Development Server  
+```bash
+npm run dev
+```
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4️⃣ Build for Production  
+```bash
+npm run build
+npm start
+```
