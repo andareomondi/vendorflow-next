@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { ModeToggle } from "@/components/ui/modetoggle";
 // This file is used to set up the root layout for the application.
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           {children}
-          <ModeToggle />
         </ThemeProvider>
       </body>
     </html>
